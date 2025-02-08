@@ -10,6 +10,9 @@ def lambda_handler(event, context):
     data = {
         "users": [
             {
+                "id": "1",
+                "firstname": "John",
+                "lastname": "Doe",
                 "location": "News York, NY",
                 "birthday": "January 15",
                 "email": "johndoe@example.com",
@@ -20,6 +23,9 @@ def lambda_handler(event, context):
                 "about_me": "Passionate about technology and leadership."
             },
             {
+                "id": "2",
+                "firstname": "Jane",
+                "lastname": "Doe",
                 "location": "Los Angeles, CA",
                 "birthday": "February 20",
                 "email": "janesmith@example.com",
@@ -30,6 +36,9 @@ def lambda_handler(event, context):
                 "about_me": "Love coding and exploring new innovations."
             },
             {
+                "id": "3",
+                "firstname": "Alex",
+                "lastname": "Smith",
                 "location": "Chicago, IL",
                 "birthday": "March 5",
                 "email": "alicejohnson@example.com",
@@ -40,6 +49,9 @@ def lambda_handler(event, context):
                 "about_me": "Driven by data and problem-solving."
             },
             {
+                "id": "4",
+                "firstname": "Jack",
+                "lastname": "Johnson",
                 "location": "Dallas, TX",
                 "birthday": "November 30",
                 "email": "bobbrown@example.com",
