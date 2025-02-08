@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
   // Fetch data on component initialization
   ngOnInit() {
-    fetch('https://riseonebiopagebucket.s3.amazonaws.com/lambda-output.json')
+    fetch('http://pedigoprojectbucketnew.s3-website.us-east-2.amazonaws.com/lambda-output.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
