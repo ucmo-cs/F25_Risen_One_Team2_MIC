@@ -1,36 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel binding
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
   template: `
     <h1>{{ message }}</h1>
-    <p>Timestamp: {{ timestamp }}</p>
 
     <!-- Search Bar -->
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by location, email, or about me..." />
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search by location, email, or about me..." />
+    </div>
 
-    <ul>
-      <li *ngFor="let user of filteredUsers">
-        <strong>Location:</strong> {{ user.location }}<br />
-        <strong>Birthday:</strong> {{ user.birthday }}<br />
-        <strong>Email:</strong> {{ user.email }}<br />
-        <strong>Phone Number:</strong> {{ user.phone_number }}<br />
-        <strong>Projects Worked On:</strong> {{ user.projects_worked_on.join(', ') }}<br />
-        <strong>Team:</strong> {{ user.team }}<br />
-        <strong>Length of Service:</strong> {{ user.length_of_service }}<br />
-        <strong>About Me:</strong> {{ user.about_me }}<br />
-      </li>
-    </ul>
-  `,
+    <div class="container">
+      <div class="card-data" *ngFor="let user of filteredUsers">
+        <mat-card class="user-card" appearance="outlined">
+          <img mat-card-image src="https://placehold.co/150x100" alt="User Image" />
+          <mat-card-title>{{ user.firstname }}, {{ user.lastname }}</mat-card-title>
+          <mat-card-content>{{ user.email }}</mat-card-content>
+          <mat-card-content>{{ user.phone_number }}</mat-card-content>
+        </mat-card>
+      </div>
+    </div>`,
   standalone: true,
-  imports: [CommonModule, FormsModule], // Ensure FormsModule is added for ngModel
+  styleUrl: './home.component.css',
+  imports: [CommonModule, FormsModule, MatCardModule], // Ensure FormsModule is added for ngModel
 })
 export class HomeComponent implements OnInit {
   message: string = 'Loading...';
   timestamp: string = '';
   users: Array<{
+    id: string;
+    firstname: string;
+    lastname: string;
     location: string;
     birthday: string;
     email: string;
@@ -54,6 +57,17 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  validateNames() {
+    this.users.forEach((user) => {
+      if (user.firstname === '' || user.firstname == null) {
+        user.firstname = 'John';
+      }
+      if (user.lastname === '' || user.lastname == null) {
+        user.lastname = 'Doe';
+      }
+    });
+  }
+
   // Fetch data on component initialization
   ngOnInit() {
     fetch('http://pedigoprojectbucketnew.s3-website.us-east-2.amazonaws.com/lambda-output.json')
@@ -64,9 +78,11 @@ export class HomeComponent implements OnInit {
         return response.json();
       })
       .then((data) => {
-        this.message = 'User data loaded';
+        this.message = 'Employee Cards';
         this.timestamp = new Date().toISOString();
         this.users = data.users;
+        this.validateNames();
+        console.log(this.users);
       })
       .catch((error) => {
         console.error('Error fetching JSON:', error);
