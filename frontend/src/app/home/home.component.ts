@@ -18,8 +18,8 @@ import { MatCardModule } from '@angular/material/card';
         <mat-card class="user-card" appearance="outlined">
           <img mat-card-image src="https://placehold.co/150x100" alt="User Image" />
           <mat-card-title>{{ user.firstname }}, {{ user.lastname }}</mat-card-title>
-          <mat-card-content>{{ user.email }}</mat-card-content>
-          <mat-card-content>{{ user.phone_number }}</mat-card-content>
+          <mat-card-content>{{ user.contact.email }}</mat-card-content>
+          <mat-card-content>{{ user.contact.phone }}</mat-card-content>
         </mat-card>
       </div>
     </div>`,
@@ -34,8 +34,13 @@ export class HomeComponent implements OnInit {
     id: string;
     firstname: string;
     lastname: string;
+    photo: string;
     location: string;
     birthday: string;
+    contact: {
+      email: string;
+      phone: string;
+    };
     email: string;
     phone_number: string;
     projects_worked_on: string[];
