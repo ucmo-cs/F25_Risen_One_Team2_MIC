@@ -15,11 +15,18 @@ import { MatCardModule } from '@angular/material/card';
 
     <div class="container">
       <div class="card-data" *ngFor="let user of filteredUsers">
-        <mat-card class="user-card" appearance="outlined">
+        <mat-card class="user-card">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <img src="https://placehold.co/50x50" alt="User Image" />
+            </div>
+            <mat-card-title>{{ user.firstname }}, {{ user.lastname }}</mat-card-title>
+            <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
+          </mat-card-header>
           <img mat-card-image src="https://placehold.co/150x100" alt="User Image" />
-          <mat-card-title>{{ user.firstname }}, {{ user.lastname }}</mat-card-title>
-          <mat-card-content>{{ user.contact.email }}</mat-card-content>
-          <mat-card-content>{{ user.contact.phone }}</mat-card-content>
+          <mat-card-content>
+            <p>{{ user.contact.email }}</p>
+          </mat-card-content>
         </mat-card>
       </div>
     </div>`,
