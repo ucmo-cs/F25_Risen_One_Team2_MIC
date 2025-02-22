@@ -1,0 +1,183 @@
+[
+    {
+      "name": "Alice Johnson",
+      "photo": "https://example.com/photos/alice.jpg",
+      "location": "New York, NY",
+      "birthday": "1990-03-25",
+      "contact": {
+        "email": "alice.johnson@example.com",
+        "phone": "555-123-4567"
+      },
+      "projects": ["Project Alpha", "Project Beta"],
+      "team": "Team Innovators"
+    },
+    {
+      "name": "Bob Smith",
+      "photo": "https://example.com/photos/bob.jpg",
+      "location": "Los Angeles, CA",
+      "birthday": "1987-07-14",
+      "contact": {
+        "email": "bob.smith@example.com",
+        "phone": "555-987-6543"
+      },
+      "projects": ["Project Gamma", "Project Delta"],
+      "team": "Team Visionaries"
+    },
+    {
+      "name": "Carol Lee",
+      "photo": "https://example.com/photos/carol.jpg",
+      "location": "Chicago, IL",
+      "birthday": "1995-05-20",
+      "contact": {
+        "email": "carol.lee@example.com",
+        "phone": "555-654-3210"
+      },
+      "projects": ["Project Epsilon", "Project Zeta"],
+      "team": "Team Innovators"
+    },
+    {
+      "name": "David Brown",
+      "photo": "https://example.com/photos/david.jpg",
+      "location": "San Francisco, CA",
+      "birthday": "1992-09-10",
+      "contact": {
+        "email": "david.brown@example.com",
+        "phone": "555-321-7654"
+      },
+      "projects": ["Project Theta", "Project Iota"],
+      "team": "Team Pioneers"
+    },
+    {
+      "name": "Ella Green",
+      "photo": "https://example.com/photos/ella.jpg",
+      "location": "Austin, TX",
+      "birthday": "1993-01-30",
+      "contact": {
+        "email": "ella.green@example.com",
+        "phone": "555-789-1230"
+      },
+      "projects": ["Project Kappa", "Project Lambda"],
+      "team": "Team Visionaries"
+    },
+    {
+      "name": "Frank White",
+      "photo": "https://example.com/photos/frank.jpg",
+      "location": "Seattle, WA",
+      "birthday": "1988-12-15",
+      "contact": {
+        "email": "frank.white@example.com",
+        "phone": "555-456-7890"
+      },
+      "projects": ["Project Mu", "Project Nu"],
+      "team": "Team Innovators"
+    },
+    {
+      "name": "Grace Hall",
+      "photo": "https://example.com/photos/grace.jpg",
+      "location": "Boston, MA",
+      "birthday": "1991-04-22",
+      "contact": {
+        "email": "grace.hall@example.com",
+        "phone": "555-567-8901"
+      },
+      "projects": ["Project Xi", "Project Omicron"],
+      "team": "Team Pioneers"
+    },
+    {
+      "name": "Henry Adams",
+      "photo": "https://example.com/photos/henry.jpg",
+      "location": "Denver, CO",
+      "birthday": "1989-06-18",
+      "contact": {
+        "email": "henry.adams@example.com",
+        "phone": "555-678-9012"
+      },
+      "projects": ["Project Pi", "Project Rho"],
+      "team": "Team Visionaries"
+    },
+    {
+      "name": "Ivy Clark",
+      "photo": "https://example.com/photos/ivy.jpg",
+      "location": "San Diego, CA",
+      "birthday": "1994-11-05",
+      "contact": {
+        "email": "ivy.clark@example.com",
+        "phone": "555-789-0123"
+      },
+      "projects": ["Project Sigma", "Project Tau"],
+      "team": "Team Innovators"
+    },
+    {
+      "name": "Jack King",
+      "photo": "https://example.com/photos/jack.jpg",
+      "location": "Miami, FL",
+      "birthday": "1996-02-28",
+      "contact": {
+        "email": "jack.king@example.com",
+        "phone": "555-890-1234"
+      },
+      "projects": ["Project Upsilon", "Project Phi"],
+      "team": "Team Visionaries"
+    },
+    {
+      "name": "Kelly Martin",
+      "photo": "https://example.com/photos/kelly.jpg",
+      "location": "Portland, OR",
+      "birthday": "1997-07-19",
+      "contact": {
+        "email": "kelly.martin@example.com",
+        "phone": "555-901-2345"
+      },
+      "projects": ["Project Chi", "Project Psi"],
+      "team": "Team Pioneers"
+    },
+    {
+      "name": "Leo Turner",
+      "photo": "https://example.com/photos/leo.jpg",
+      "location": "Atlanta, GA",
+      "birthday": "1998-08-13",
+      "contact": {
+        "email": "leo.turner@example.com",
+        "phone": "555-012-3456"
+      },
+      "projects": ["Project Omega", "Project Alpha"],
+      "team": "Team Innovators"
+    },
+    {
+      "name": "Mia Scott",
+      "photo": "https://example.com/photos/mia.jpg",
+      "location": "Dallas, TX",
+      "birthday": "1993-03-17",
+      "contact": {
+        "email": "mia.scott@example.com",
+        "phone": "555-123-4567"
+      },
+      "projects": ["Project Beta", "Project Delta"],
+      "team": "Team Visionaries"
+    },
+    {
+      "name": "Noah Evans",
+      "photo": "https://example.com/photos/noah.jpg",
+      "location": "Charlotte, NC",
+      "birthday": "1991-05-29",
+      "contact": {
+        "email": "noah.evans@example.com",
+        "phone": "555-987-6543"
+      },
+      "projects": ["Project Gamma", "Project Epsilon"],
+      "team": "Team Pioneers"
+    },
+    {
+      "name": "Olivia Hughes",
+      "photo": "https://example.com/photos/olivia.jpg",
+      "location": "Phoenix, AZ",
+      "birthday": "1992-10-11",
+      "contact": {
+        "email": "olivia.hughes@example.com",
+        "phone": "555-678-9012"
+      },
+      "projects": ["Project Zeta", "Project Theta"],
+      "team": "Team Innovators"
+    }
+  ]
+  

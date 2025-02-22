@@ -6,6 +6,9 @@
 .content {
     width: 90vw;
     min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 app-sidenav {
