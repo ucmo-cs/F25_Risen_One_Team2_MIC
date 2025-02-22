@@ -1,6 +1,8 @@
 [
     {
-      "name": "Alice Johnson",
+      "id": "1",
+      "firstname": "Alice",
+      "lastname": "Johnson",
       "photo": "https://example.com/photos/alice.jpg",
       "location": "New York, NY",
       "birthday": "1990-03-25",
@@ -12,7 +14,9 @@
       "team": "Team Innovators"
     },
     {
-      "name": "Bob Smith",
+      "id": "2",
+      "firstname": "Bob",
+      "lastname": "Smith",
       "photo": "https://example.com/photos/bob.jpg",
       "location": "Los Angeles, CA",
       "birthday": "1987-07-14",
@@ -24,6 +28,9 @@
       "team": "Team Visionaries"
     },
     {
+      "id": "3",
+      "firstname": "Carol",
+      "lastname": "Lee",
       "name": "Carol Lee",
       "photo": "https://example.com/photos/carol.jpg",
       "location": "Chicago, IL",
@@ -36,7 +43,9 @@
       "team": "Team Innovators"
     },
     {
-      "name": "David Brown",
+      "id": "4",
+      "firstname": "David",
+      "lastname": "Brown",
       "photo": "https://example.com/photos/david.jpg",
       "location": "San Francisco, CA",
       "birthday": "1992-09-10",
@@ -48,7 +57,9 @@
       "team": "Team Pioneers"
     },
     {
-      "name": "Ella Green",
+      "id": "5",
+      "firstname": "Ella",
+      "lastname": "Green",
       "photo": "https://example.com/photos/ella.jpg",
       "location": "Austin, TX",
       "birthday": "1993-01-30",
@@ -60,7 +71,9 @@
       "team": "Team Visionaries"
     },
     {
-      "name": "Frank White",
+      "id": "6",
+      "firstname": "Frank",
+      "lastname": "White",
       "photo": "https://example.com/photos/frank.jpg",
       "location": "Seattle, WA",
       "birthday": "1988-12-15",
@@ -72,7 +85,9 @@
       "team": "Team Innovators"
     },
     {
-      "name": "Grace Hall",
+      "id": "7",
+      "firstname": "Grace",
+      "lastname": "Hall",
       "photo": "https://example.com/photos/grace.jpg",
       "location": "Boston, MA",
       "birthday": "1991-04-22",
@@ -84,7 +99,9 @@
       "team": "Team Pioneers"
     },
     {
-      "name": "Henry Adams",
+      "id": "8",
+      "firstname": "Henry",
+      "lastname": "Adams",
       "photo": "https://example.com/photos/henry.jpg",
       "location": "Denver, CO",
       "birthday": "1989-06-18",
@@ -96,7 +113,9 @@
       "team": "Team Visionaries"
     },
     {
-      "name": "Ivy Clark",
+      "id": "9",
+      "firstname": "Ivy",
+      "lastname": "Clark",
       "photo": "https://example.com/photos/ivy.jpg",
       "location": "San Diego, CA",
       "birthday": "1994-11-05",
@@ -108,7 +127,9 @@
       "team": "Team Innovators"
     },
     {
-      "name": "Jack King",
+      "id": "10",
+      "firstname": "Jack",
+      "lastname": "King",
       "photo": "https://example.com/photos/jack.jpg",
       "location": "Miami, FL",
       "birthday": "1996-02-28",
@@ -120,7 +141,9 @@
       "team": "Team Visionaries"
     },
     {
-      "name": "Kelly Martin",
+      "id": "11",
+      "firstname": "Kelly",
+      "lastname": "Martin",
       "photo": "https://example.com/photos/kelly.jpg",
       "location": "Portland, OR",
       "birthday": "1997-07-19",
@@ -132,7 +155,9 @@
       "team": "Team Pioneers"
     },
     {
-      "name": "Leo Turner",
+      "id": "12",
+      "firstname": "Leo",
+      "lastname": "Turner",
       "photo": "https://example.com/photos/leo.jpg",
       "location": "Atlanta, GA",
       "birthday": "1998-08-13",
@@ -144,7 +169,9 @@
       "team": "Team Innovators"
     },
     {
-      "name": "Mia Scott",
+      "id": "13",
+      "firstname": "Mia",
+      "lastname": "Scott",
       "photo": "https://example.com/photos/mia.jpg",
       "location": "Dallas, TX",
       "birthday": "1993-03-17",
@@ -156,7 +183,9 @@
       "team": "Team Visionaries"
     },
     {
-      "name": "Noah Evans",
+      "id": "14",
+      "firstname": "Noah",
+      "lastname": "Morris",
       "photo": "https://example.com/photos/noah.jpg",
       "location": "Charlotte, NC",
       "birthday": "1991-05-29",
@@ -168,7 +197,9 @@
       "team": "Team Pioneers"
     },
     {
-      "name": "Olivia Hughes",
+      "id": "15",
+      "firstname": "Olivia",
+      "lastname": "Hughes",
       "photo": "https://example.com/photos/olivia.jpg",
       "location": "Phoenix, AZ",
       "birthday": "1992-10-11",
