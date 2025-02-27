@@ -6,6 +6,7 @@
 html,
 body {
   all: unset;
+
     background-image: linear-gradient(
       to right bottom,
       hsla(48, 100%, 49%, 0.8),

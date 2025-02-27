@@ -19,7 +19,6 @@ import { MatCardModule } from '@angular/material/card';
         <option value="phone">Phone</option>
         <option value="projects_worked_on">Projects Worked</option>
         <option value="team">Team</option>
-    
       </select>
       <button (click)="clearSearch()" class="search-button">Clear</button>
     </div>
@@ -28,13 +27,10 @@ import { MatCardModule } from '@angular/material/card';
       <div class="card-data" *ngFor="let user of filteredUsers">
         <mat-card class="user-card">
           <mat-card-header>
-            <div mat-card-avatar>
-              <img src="https://placehold.co/50x50" alt="User Image" />
-            </div>
-            <mat-card-title>{{ user.firstname }}, {{ user.lastname }}</mat-card-title>
+            <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
             <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="https://placehold.co/150x100" alt="User Image" />
+          <img mat-card-image [src]="user.photo" alt="User Image" class="user-photo" />
           <mat-card-content>
             <p>{{ user.contact.email }}</p>
           </mat-card-content>
@@ -50,7 +46,7 @@ import { MatCardModule } from '@angular/material/card';
 export class HomeComponent implements OnInit {
   message: string = 'Loading...';
   searchTerm: string = ''; 
-  filterBy: string = 'both'; // Default to searching both first and last names
+  filterBy: string = 'both'; 
   users: Array<{
     id: string;
     firstname: string;
@@ -62,21 +58,14 @@ export class HomeComponent implements OnInit {
       email: string;
       phone: string;
     };
-    email: string;
-    phone_number: string;
     projects_worked_on: string[];
     team: string;
-    length_of_service: string;
-    about_me: string;
   }> = [];
 
-  // Filter users based on user selection
+  // Filter users based on selection
   get filteredUsers() {
     const searchTermLower = this.searchTerm.trim().toLowerCase();
-
-    if (!searchTermLower) {
-      return this.users; // If search is empty, show all users
-    }
+    if (!searchTermLower) return this.users;
 
     return this.users.filter(user => {
       const firstNameLower = user.firstname?.toLowerCase() || '';
@@ -87,34 +76,16 @@ export class HomeComponent implements OnInit {
       const phoneLower = user.contact.phone?.toLowerCase() || '';
       const projectsLower = user.projects_worked_on?.join(' ').toLowerCase() || '';
       const teamLower = user.team?.toLowerCase() || '';
-      const lengthOfServiceLower = user.length_of_service?.toLowerCase() || '';
-      const aboutMeLower = user.about_me?.toLowerCase() || '';
 
       switch (this.filterBy) {
-        case 'firstname':
-          return firstNameLower.includes(searchTermLower);
-        case 'lastname':
-          return lastNameLower.includes(searchTermLower);
-        case 'both':
-          return `${firstNameLower} ${lastNameLower}`.includes(searchTermLower); // Updated logic for full name search
-        case 'location':
-          return locationLower.includes(searchTermLower);
-        case 'birthday':
-          return birthdayLower.includes(searchTermLower);
-        case 'email':
-          return emailLower.includes(searchTermLower);
-        case 'phone':
-          return phoneLower.includes(searchTermLower);
-        case 'projects_worked_on':
-          return projectsLower.includes(searchTermLower);
-        case 'team':
-          return teamLower.includes(searchTermLower);
-        case 'length_of_service':
-          return lengthOfServiceLower.includes(searchTermLower);
-        case 'about_me':
-          return aboutMeLower.includes(searchTermLower);
-        default:
-          return false;
+        case 'both': return `${firstNameLower} ${lastNameLower}`.includes(searchTermLower);
+        case 'location': return locationLower.includes(searchTermLower);
+        case 'birthday': return birthdayLower.includes(searchTermLower);
+        case 'email': return emailLower.includes(searchTermLower);
+        case 'phone': return phoneLower.includes(searchTermLower);
+        case 'projects_worked_on': return projectsLower.includes(searchTermLower);
+        case 'team': return teamLower.includes(searchTermLower);
+        default: return false;
       }
     });
   }
@@ -124,13 +95,11 @@ export class HomeComponent implements OnInit {
     this.searchTerm = '';
   }
 
-  // Fetch data on component initialization
+  // Fetch data from S3 on component initialization
   ngOnInit() {
     fetch('http://riseonebiopagebucket.s3-website.us-east-2.amazonaws.com/lambda-output.json')
       .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         return response.json();
       })
       .then(data => {
