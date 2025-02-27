@@ -1,11 +1,11 @@
 
 html {
-    background-color: #FBC900;
+    background-color: #fb7100;
 }
 body {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #FBC900;
+    background-color: #fb00c5;
     height: fit-content;
     max-width: 100%;
     overflow-x: hidden;
@@ -134,7 +134,7 @@ mat-form-field {
 .button-addNew {
     border: none;
     color: #000;
-    background-color: #FBC900;
+    background-color: #00fb2a;
     padding: 15px 32px;
     font-size: 16px;
     margin-left: 20%;
@@ -142,7 +142,7 @@ mat-form-field {
   }
 
 .button-exportToPDF {
-    border: 2px solid #FBC900;
+    border: 2px solid #5800fb;
     padding: 15px 32px;
     font-size: 16px;
     border-radius: 50px;
