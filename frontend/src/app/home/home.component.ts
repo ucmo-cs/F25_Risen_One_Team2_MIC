@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
         return response.json();
       })
       .then(data => {
-        this.message = 'Employee Cards';
+        this.message = 'Risen One Employees';
         this.users = data.users;
         console.log('Fetched users:', this.users); // Debugging log
       })

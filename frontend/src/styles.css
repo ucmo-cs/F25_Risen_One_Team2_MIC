@@ -6,12 +6,9 @@
 html,
 body {
   all: unset;
-
-    background-image: linear-gradient(
-      to right bottom,
-      hsla(48, 100%, 49%, 0.8),
-      hsla(34, 100%, 46%, 0.8)
-    );
+  background-image: url("https://static.wixstatic.com/media/c80d2a_76df06d8bfe548e1a9379177bbe019c7~mv2.jpg/v1/fill/w_2000,h_1183,al_c,q_90,enc_avif,quality_auto/c80d2a_76df06d8bfe548e1a9379177bbe019c7~mv2.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 p {
@@ -79,7 +76,7 @@ p {
 }
 
 .mat-mdc-card-content.mat-mdc-card-content {
-  padding:0;
+  padding: 0;
 }
 
 tr.expanded {
