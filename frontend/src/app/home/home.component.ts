@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 
     <div class="container">
       <div class="card-data" *ngFor="let user of filteredUsers">
-        <mat-card class="user-card">
+        <mat-card class="user-card" (click)="navigateToUser(user.id)">
           <mat-card-header>
             <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
             <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
@@ -62,6 +63,8 @@ export class HomeComponent implements OnInit {
     team: string;
   }> = [];
 
+  constructor(private router: Router) { }
+
   // Filter users based on selection
   get filteredUsers() {
     const searchTermLower = this.searchTerm.trim().toLowerCase();
@@ -90,6 +93,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  navigateToUser(userId: string) {
+    console.log('Navigating to user:', userId); // Debugging log
+    //this.router.navigate(['/user', userId]);
+  }
+
   // Clear search input
   clearSearch() {
     this.searchTerm = '';
@@ -97,7 +105,9 @@ export class HomeComponent implements OnInit {
 
   // Fetch data from S3 on component initialization
   ngOnInit() {
-    fetch('http://riseonebiopagebucket.s3-website.us-east-2.amazonaws.com/lambda-output.json')
+    const zachBucket = 'http://pedigoprojectbucketnew.s3-website.us-east-2.amazonaws.com/lambda-output.json';
+    const calebBucket = 'http://riseonebiopagebucket.s3-website.us-east-2.amazonaws.com/lambda-output.json';
+    fetch(zachBucket)
       .then(response => {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         return response.json();
