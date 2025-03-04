@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
       email: string;
       phone: string;
     };
-    projects_worked_on: string[];
+    projects: string[];
     team: string;
   }> = [];
 
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
       const birthdayLower = user.birthday?.toLowerCase() || '';
       const emailLower = user.contact.email?.toLowerCase() || '';
       const phoneLower = user.contact.phone?.toLowerCase() || '';
-      const projectsLower = user.projects_worked_on?.join(' ').toLowerCase() || '';
+      const projectsLower = user.projects?.join(' ').toLowerCase() || '';
       const teamLower = user.team?.toLowerCase() || '';
 
       switch (this.filterBy) {
