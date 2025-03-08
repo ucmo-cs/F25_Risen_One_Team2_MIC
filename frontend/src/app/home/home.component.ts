@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { User } from '../user/user.model';
+import { UserApiService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   filterBy: string = 'both'; 
   users: Array<User> = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserApiService) { }
 
   // Filter users based on selection
   get filteredUsers() {
@@ -71,11 +72,13 @@ export class HomeComponent implements OnInit {
       .then(data => {
         this.message = 'Risen One Employees';
         this.users = data.users;
+        this.userService.setUsers(data.users);
         console.log('Fetched users:', this.users); // Debugging log
       })
       .catch(error => {
         console.error('Error fetching JSON:', error);
         this.message = `Error loading data: ${error.message}`;
-      });
+      }
+    );
   }
 }
