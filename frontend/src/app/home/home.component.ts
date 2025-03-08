@@ -3,43 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+import { User } from '../user/user.model';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <h1>{{ message }}</h1>
-
-    <!-- Search Bar, Filter Dropdown, and Clear Button -->
-    <div class="search-bar-container">
-      <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." />
-      <select [(ngModel)]="filterBy">
-        <option value="both">First & Last Name</option>
-        <option value="location">Location</option>
-        <option value="birthday">Birthday</option>
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
-        <option value="projects_worked_on">Projects Worked</option>
-        <option value="team">Team</option>
-      </select>
-      <button (click)="clearSearch()" class="search-button">Clear</button>
-    </div>
-
-    <div class="container">
-      <div class="card-data" *ngFor="let user of filteredUsers">
-        <mat-card class="user-card" (click)="navigateToUser(user.id)">
-          <mat-card-header>
-            <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
-            <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image [src]="user.photo" alt="User Image" class="user-photo" />
-          <mat-card-content>
-            <p>{{ user.contact.email }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  `,
   standalone: true,
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   imports: [CommonModule, FormsModule, MatCardModule],
 })
@@ -48,20 +17,7 @@ export class HomeComponent implements OnInit {
   message: string = 'Loading...';
   searchTerm: string = ''; 
   filterBy: string = 'both'; 
-  users: Array<{
-    id: string;
-    firstname: string;
-    lastname: string;
-    photo: string;
-    location: string;
-    birthday: string;
-    contact: {
-      email: string;
-      phone: string;
-    };
-    projects: string[];
-    team: string;
-  }> = [];
+  users: Array<User> = [];
 
   constructor(private router: Router) { }
 
@@ -95,7 +51,7 @@ export class HomeComponent implements OnInit {
 
   navigateToUser(userId: string) {
     console.log('Navigating to user:', userId); // Debugging log
-    //this.router.navigate(['/user', userId]);
+    this.router.navigate(['/user', userId]);
   }
 
   // Clear search input
