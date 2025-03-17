@@ -1,47 +1,14 @@
-<!--<html lang="en" class="body">
-    <div class="container">
-        <h1>{{ user.firstname }}, {{ user.lastname }}</h1>
-        <p>{{ user.team }}</p>
-        <img [src]="user.photo" alt="User Image" class="user-photo" />
-        <p>{{ user.location }}</p>
-        <p>{{ user.birthday }}</p>
-        <p>{{ user.contact.email }}</p>
-        <p>{{ user.contact.phone }}</p>
-        <p>{{ user.team }}</p>
-    </div>
-</html> -->
-<div class="row">
-    <div class="col-md-4 col-md-border">
-      <div class="card">
-      <!-- image  -->
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-              <img src={{user.photo}} height="100" width="100" alt="placeholder">
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-  
-          <!-- details -->
-          <br><br>
-          <p><b><i>Full name</i></b><br>
-            {{ user.firstname + " " + user.lastname }}
-            <br>
-          <p><b><i>Email</i></b><br>
-            {{ user.contact.email }}
-            <br>
-          <p><b><i>Mobile</i></b><br>
-            {{ user.contact.phone }}
-            <br>
-         </div>
-        </div>
-    </div>
-  
-    <div class="col-md-8">
-      <!-- <div class="v1"></div> -->
-      <p><b><i>About me</i></b><br>
-        <br>
-      <br>
+<div class="profile-container">
+  <div class="profile-header">
+    <img [src]="user.photo" alt="Profile Picture" class="profile-img" />
+    <div class="profile-details">
+      <h3>{{ user.firstname }}, {{ user.lastname }}</h3>
+      <p>Email: {{ user.contact.email }}</p><br />
+      <p>Phone: {{ user.contact.phone }}</p><br />
+      <p>Location: {{ user.location }}</p><br />
+      <p>Team: {{ user.team }}</p><br />
+      <p>Projects: {{ user.projects }}</p><br />
+      <p>Birthday: {{ user.birthday }}</p><br />
     </div>
   </div>
+</div>
