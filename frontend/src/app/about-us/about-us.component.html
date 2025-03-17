@@ -1,14 +1,11 @@
 <div id="about-us-container">
-  <div id="about-us-header">About Us</div>
-  <div id="dynamic-content">
     <!-- Passing message to child component -->
-    <app-about-us-content [message]="message" *ngIf="isVisible"></app-about-us-content>
-  </div>
+    <app-about-us-content [cardData]="currentCard" *ngIf="isVisible"></app-about-us-content>
   <div id="mission-card-container">
     <!--Cards that trigger onHover function -->
-    <div class="mission-card" (mouseenter)="onHover(true, 1)" (mouseleave)="onHover(false, 0)">Services</div>
-    <div class="mission-card" (mouseenter)="onHover(true, 2)" (mouseleave)="onHover(false, 0)">Leaders</div>
-    <div class="mission-card" (mouseenter)="onHover(true, 3)" (mouseleave)="onHover(false, 0)">Mission Statement</div>
-    <div class="mission-card" (mouseenter)="onHover(true, 4)" (mouseleave)="onHover(false, 0)">Contact Us</div>
+    <div class="mission-card" (mouseenter)="onHover(true, 2)">About Us</div>
+    <div class="mission-card" (mouseenter)="onHover(true, 1)">Services</div>
+    <div class="mission-card" (mouseenter)="onHover(true, 3)">Mission Statement</div>
+    <div class="mission-card" (mouseenter)="onHover(true, 4)">Contact Us</div>
   </div>
 </div>

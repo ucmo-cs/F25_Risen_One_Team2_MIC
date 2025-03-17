@@ -1,1 +1,30 @@
-<div class="about-us-content" [innerHTML]="message"></div>
+<div class="dynamic-content">
+    <div class="card-container">
+        <mat-card id="card">
+            <mat-card-header id="card-header">
+                <mat-card-title id="card-title">
+                    {{ cardData.headerMessage }}
+                </mat-card-title>
+            </mat-card-header>
+            <ng-container [ngSwitch]="cardData.layout">
+                <ng-container *ngSwitchCase="'1'"> <!--Layout 1 is for long paragraphs-->
+                    <mat-card-content id="card-content-1">
+                        {{ cardData.contentMessage }}
+                    </mat-card-content>
+                </ng-container>
+                <ng-container *ngSwitchCase="'2'"> <!--Layout 2 is for social media/services with icons-->
+                    <mat-card-content id="card-content-2">
+                        <!--Dynamically render row for each contentMessage item-->
+                        <div *ngFor="let message of cardData.contentMessage; let i = index" class="card-row">
+                            <div class="row-message-container"><span class="row-message">{{ message }}</span></div>
+                            <img *ngIf="cardData.icons && cardData.icons[i]" 
+                                [src]="cardData.icons[i]" 
+                                alt="icon"
+                                class="row-icon"/>
+                        </div>
+                    </mat-card-content>
+                </ng-container>
+            </ng-container>
+        </mat-card>
+    </div>
+</div>
