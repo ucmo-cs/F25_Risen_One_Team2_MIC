@@ -86,7 +86,6 @@ tr.expanded {
 
 .mat-sort-header-container {
   justify-content: center;
-<<<<<<< HEAD
 }
 
 ::-webkit-scrollbar {
@@ -105,6 +104,3 @@ tr.expanded {
 ::-webkit-scrollbar-thumb:hover {
   background: #464646; 
 }
-=======
-}
->>>>>>> d0b068d (Reworked UI layout to be more dynamic)
