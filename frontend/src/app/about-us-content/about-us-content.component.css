@@ -1,12 +1,126 @@
-:host {
-    height: 100%;
+:host, .card-container {
+    all: unset;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dynamic-content {
+    display: flex;
+}
+
+.card-container {
+    height: 100;
+    margin: 20px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+}
+
+#card-title {
+    color: white;
     font-size: 2em;
-    color: rgba(240, 240, 240, 0.8);
-    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#card-header {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+#card-content-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     padding: 20px;
 }
+
+#card-content-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+#card-content-1, #card-content-2 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: auto; /*dynamic height based on content length. change this to a set value if wanted*/
+    font-size: 1.4em;
+    overflow-y: auto;
+}
+
+#card {
+    display: flex;
+    background-color: transparent;
+    max-width: 600px;
+    height: 80%;
+}
+
+.card-row {
+    width: 100%;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.row-message-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row-icon-container {
+    align-self: flex-end;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+}
+.row-icon {
+    height: 100%; /* Make the icon match the row height */
+    width: auto; /* Maintain aspect ratio */
+    max-height: 50px; /* Optional: Limit the maximum size */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li, ul {
+    all: unset;
+}
+
+::-webkit-scrollbar {
+    width: 4px; /* Skinny scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(211, 211, 211, 0.5); /* Light grey (lightgray) with transparency */
+    border-radius: 3px; /* Rounded edges */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(211, 211, 211, 0.8); /* Slightly darker on hover */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+  }

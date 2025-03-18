@@ -61,130 +61,72 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'; // Import HomeComponent
 import { AppRoutingModule } from './app.routes';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
-
  declarations: [
-
    AppHeaderComponent,
-
    AppFooterComponent,
-
    SidenavComponent,
-
    LoginComponent,
-
-   AppComponent
-
+   AppComponent,
+   UserComponent
  ],
-
  exports: [],
-
  bootstrap: [AppComponent],
-
  imports: [
-
    BrowserModule,
-
    LayoutModule,
-
    FormsModule,
-
    ReactiveFormsModule,
-
    BrowserAnimationsModule,
-
    CommonModule,
-
    MatAutocompleteModule,
-
    MatCheckboxModule,
-
    MatDatepickerModule,
-
    MatFormFieldModule,
-
    MatInputModule,
-
    MatRadioModule,
-
    MatSelectModule,
-
    MatSliderModule,
-
    MatSlideToggleModule,
-
    MatMenuModule,
-
    MatSidenavModule,
-
    MatToolbarModule,
-
    MatCardModule,
-
    MatDividerModule,
-
    MatExpansionModule,
-
    MatGridListModule,
-
    MatListModule,
-
    MatStepperModule,
-
    MatTabsModule,
-
    MatTreeModule,
-
    MatButtonModule,
-
    MatButtonToggleModule,
-
    MatBadgeModule,
-
    MatChipsModule,
-
    MatIconModule,
-
    MatProgressSpinnerModule,
-
    MatProgressBarModule,
-
    MatRippleModule,
-
    MatBottomSheetModule,
-
    MatDialogModule,
-
    MatSnackBarModule,
-
    MatTooltipModule,
-
    MatPaginatorModule,
-
    MatSortModule,
-
    MatTableModule,
-
    FormsModule,
-
    ReactiveFormsModule,
-
    AppRoutingModule,
-
-   HomeComponent, // Add HomeComponent here
-
+   HomeComponent
  ],
 
  providers: [
-
    MatSnackBar,
-
    provideHttpClient(withInterceptorsFromDi()),
-
  ]
-
 })
 
 export class AppModule { }

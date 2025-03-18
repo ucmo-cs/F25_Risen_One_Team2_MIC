@@ -1,0 +1,14 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <img [src]="user.photo" alt="Profile Picture" class="profile-img" />
+    <div class="profile-details">
+      <h3>{{ user.firstname }}, {{ user.lastname }}</h3>
+      <p>Email: {{ user.contact.email }}</p><br />
+      <p>Phone: {{ user.contact.phone }}</p><br />
+      <p>Location: {{ user.location }}</p><br />
+      <p>Team: {{ user.team }}</p><br />
+      <p>Projects: {{ user.projects }}</p><br />
+      <p>Birthday: {{ user.birthday }}</p><br />
+    </div>
+  </div>
+</div>

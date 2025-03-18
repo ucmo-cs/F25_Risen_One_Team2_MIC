@@ -1,20 +1,20 @@
-
 html {
-    background-color: #FBC900;
+    background-color: #fb7100;
 }
 body {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #FBC900;
+    background-color: #fb00c5;
     height: fit-content;
     max-width: 100%;
     overflow-x: hidden;
-  }
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    padding-bottom: 35px;
 }
 
 .search-bar {
@@ -25,54 +25,73 @@ body {
     margin-bottom: 20px;
 }
 
-.user-card { 
-    max-width: 450px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.card-data {
+.user-card {
+    width: 30vh;
+    height: auto; /* Adjusts dynamically */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.user-photo {
+    width: 100%;
+    height: 150px; /* Fixed height to maintain uniformity */
+    object-fit: cover; /* Ensures image fits without distortion */
+    border-radius: 8px;
+}
+
+.card-data {
+    display: flex;
     padding-right: 10px;
     padding-top: 10px;
 }
-mat-card {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+
+mat-card-title {
+    color: green;
+    font: "Lato", sans-serif;
+    font-size: 25px;
 }
-mat-card-title { 
-  color: green;
-  font: "Lato", sans-serif;
-  font-size: 30px;
-  justify-content: center;
-}
+
 mat-card-content {
     font: "Lato", sans-serif;
     font-size: 15px;
-    justify-content: center;
-    text-align: center;
+    margin-top: 10px; /* Ensures email is properly spaced */
+}
+
+mat-card {
+    transition: transform 0.3s ease;
+}
+
+mat-card:hover {
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+    transform: scale(1.02) translate3d(0,0,0);
+    transition: background .4s cubic-bezier(.25, .8, 0, 1), box-shadow 300ms;
 }
 
 .box-1 {
-    text-align: left; 
-    display:flex; 
-    flex-direction: column; 
+    text-align: left;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 80%;
     margin: 0 auto;
     border: 2px solid grey;
 }
+
 .box-2 {
     width: 80%;
     margin: 0 auto;
     border: 2px solid grey;
     border-top: 0px;
 }
+
 .box-2-inside {
     margin-left: 15px;
     margin-top: 15px;
 }
+
 .box-3 {
     width: 80%;
     margin: 0 auto;
@@ -81,61 +100,73 @@ mat-card-content {
     padding-bottom: 10px;
     margin-bottom: 50px;
 }
+
 .certificateDropdown mat-form-field {
     width: 30%;
 }
+
 p {
     text-align: left;
     font-family: 'Montserrat';
-    margin-left: center;
 }
+
 h1 {
     font-weight: bold;
     text-align: center;
     font-size: 35px;
 }
+
 .longTextAreaBox {
     width: 910px;
     padding-left: 63px;
     padding-top: 30px;
 }
+
 .shortTextAreaBox {
-    width: 400px; 
+    width: 400px;
     padding: 10px;
     margin-right: 100px;
     padding-left: 65px;
 }
+
 .shortBasicInput {
-    width: 375px; 
+    width: 375px;
     padding: 10px;
     margin-right: 125px;
     padding-left: 65px;
 }
+
 .shortBasicInput-cost {
-    width: 390px; 
+    width: 390px;
     padding: 10px;
 }
-.employeeName{
+
+.employeeName {
     margin-right: 15px;
     width: 300px;
     padding-left: 65px;
 }
-.certName{
+
+.certName {
     padding: 10px;
     width: 385px;
 }
+
 .datePicker {
-    width: 390px; 
+    width: 390px;
     padding: 10px;
 }
-.datePickerSignatures{
-    width: 275px; 
+
+.datePickerSignatures {
+    width: 275px;
     padding: 30px;
     margin-left: 15px;
 }
+
 .selectorBox {
     padding-left: 65px;
 }
+
 mat-form-field {
     overflow: visible;
     padding-right: 200px;
@@ -144,21 +175,21 @@ mat-form-field {
 .button-addNew {
     border: none;
     color: #000;
-    background-color: #FBC900;
+    background-color: #00fb2a;
     padding: 15px 32px;
     font-size: 16px;
     margin-left: 20%;
     border-radius: 50px;
-  }
+}
 
 .button-exportToPDF {
-    border: 2px solid #FBC900;
+    border: 2px solid #5800fb;
     padding: 15px 32px;
     font-size: 16px;
     border-radius: 50px;
-    border-radius: 50px;
-    margin-left: 67%;    
+    margin-left: 67%;
 }
+
 .button-save {
     padding: 15px 32px;
     font-size: 16px;
@@ -170,12 +201,15 @@ mat-checkbox {
     text-align: left;
     padding-left: 65px;
 }
+
 text-area {
     width: 50%;
 }
-.spacer{
+
+.spacer {
     flex: 1 1 auto;
 }
+
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -186,22 +220,21 @@ text-area {
     padding-right: 100px;
     max-width: 100%;
     overflow-x: hidden;
-  }
-  .menuIcon {
+}
+
+.menuIcon {
     font-size: 50px;
     padding-bottom: 30px;
     padding-right: 25px;
-
 }
-.accountIcon{
+
+.accountIcon {
     font-size: 70px;
     padding-bottom: 40px;
     padding-right: 100px;
-
-
 }
-  
-  span {
+
+span {
     background: black;
     color: white;
-  }
+}
