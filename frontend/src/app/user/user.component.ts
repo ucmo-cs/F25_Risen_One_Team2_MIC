@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
     userId: string | null = "";
     user: User = {
         id: '',
+        username: '',
         firstname: '',
         lastname: '',
         photo: '',
@@ -20,10 +21,16 @@ export class UserComponent implements OnInit {
         birthday: '',
         contact: {
             email: '',
-            phone: ''
+            phone: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+            country: ''
         },
         projects: [],
-        team: ''
+        team: '',
+        about: ''
     };
 
     constructor(private route: ActivatedRoute, private userService: UserApiService) { }
