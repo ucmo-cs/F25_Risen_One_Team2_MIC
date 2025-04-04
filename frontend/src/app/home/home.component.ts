@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
   // Fetch data from S3 on component initialization
   ngOnInit() {
     const zachBucket = 'http://pedigoprojectbucketnew.s3-website.us-east-2.amazonaws.com/lambda-output.json';
+    const calebBucket = 'http://riseonebiopagebucket.s3-website.us-east-2.amazonaws.com/lambda-output.json';
     fetch(zachBucket)
       .then(response => {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);

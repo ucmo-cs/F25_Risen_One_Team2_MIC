@@ -22,6 +22,12 @@
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+mat-card:hover {
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+    transform: scale(1.02) translate3d(0,0,0);
+    transition: background .4s cubic-bezier(.25, .8, 0, 1), box-shadow 300ms;
+}
+
 /* Hover effect on the entire search box */
 .search-box:hover {
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
