@@ -13,27 +13,29 @@ import { UserApiService } from '../services/user.service';
   styleUrls: ['./home.component.css'],
   imports: [CommonModule, FormsModule, MatCardModule],
 })
-
 export class HomeComponent implements OnInit {
   message: string = 'Loading...';
   searchTerm: string = ''; 
   filterBy: string = 'both'; 
   users: Array<User> = [];
+  loading: boolean = true; // Track loading state
 
-  constructor(private router: Router, private userService: UserApiService) { }
+  constructor(private router: Router, private userService: UserApiService) {}
 
-  // Filter users based on selection
+  // Filter users based on selection, hide users if search is empty
   get filteredUsers() {
     const searchTermLower = this.searchTerm.trim().toLowerCase();
-    if (!searchTermLower) return this.users;
+    if (!searchTermLower) {
+      return [];
+    }
 
     return this.users.filter(user => {
       const firstNameLower = user.firstname?.toLowerCase() || '';
       const lastNameLower = user.lastname?.toLowerCase() || '';
       const locationLower = user.location?.toLowerCase() || '';
-      const birthdayLower = user.birthday?.toLowerCase() || '';
-      const emailLower = user.contact.email?.toLowerCase() || '';
-      const phoneLower = user.contact.phone?.toLowerCase() || '';
+      const birthdayLower = user.birthday ? user.birthday.toString().toLowerCase() : '';
+      const emailLower = user.contact?.email?.toLowerCase() || '';
+      const phoneLower = user.contact?.phone?.toLowerCase() || '';
       const projectsLower = user.projects?.join(' ').toLowerCase() || '';
       const teamLower = user.team?.toLowerCase() || '';
 
@@ -50,14 +52,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // Navigate to user detail page
   navigateToUser(userId: string) {
-    console.log('Navigating to user:', userId); // Debugging log
+    console.log('Navigating to user:', userId);
     this.router.navigate(['/user', userId]);
   }
 
   // Clear search input
   clearSearch() {
     this.searchTerm = '';
+    this.filterBy = 'both'; 
   }
 
   // Fetch data from S3 on component initialization
@@ -70,15 +74,19 @@ export class HomeComponent implements OnInit {
         return response.json();
       })
       .then(data => {
-        this.message = 'Risen One Employees';
+        if (!data.users || !Array.isArray(data.users)) {
+          throw new Error("Invalid data format: users array missing");
+        }
         this.users = data.users;
         this.userService.setUsers(data.users);
-        console.log('Fetched users:', this.users); // Debugging log
+        this.message = '';  
+        this.loading = false;
+        console.log('Fetched users:', this.users);
       })
       .catch(error => {
         console.error('Error fetching JSON:', error);
         this.message = `Error loading data: ${error.message}`;
-      }
-    );
+        this.loading = false;
+      });
   }
 }

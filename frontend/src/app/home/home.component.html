@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" class="body">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+<body>
+
     <h1>{{ message }}</h1>
 
-    <!-- Search Bar, Filter Dropdown, and Clear Button -->
-    <div class="search-bar-container">
-      <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." />
-      <select [(ngModel)]="filterBy">
-        <option value="both">First & Last Name</option>
-        <option value="location">Location</option>
-        <option value="birthday">Birthday</option>
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
-        <option value="projects_worked_on">Projects Worked</option>
-        <option value="team">Team</option>
-      </select>
-      <button (click)="clearSearch()" class="search-button">Clear</button>
+    <!-- New Title Above Search Bar -->
+    <h2>Risen One Employee Search</h2>
+
+    <!-- Search Bar with Embedded Filter Dropdown -->
+    <div class="search-bar-container" [ngClass]="{'search-active': searchTerm.trim().length > 0}">
+        <div class="search-box">
+            <select [(ngModel)]="filterBy" class="search-filter">
+                <option value="both">First & Last Name</option>
+                <option value="location">Location</option>
+                <option value="birthday">Birthday</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="projects_worked_on">Projects Worked</option>
+                <option value="team">Team</option>
+            </select>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." class="search-input" />
+            <button (click)="clearSearch()" class="search-button">Clear</button>
+        </div>
     </div>
 
-    <div class="container">
-      <div class="card-data" *ngFor="let user of filteredUsers">
-        <mat-card class="user-card" (click)="navigateToUser(user.id)">
-          <mat-card-header>
-            <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
-            <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image [src]="user.photo" alt="User Image" class="user-photo" />
-          <mat-card-content>
-            <p>{{ user.contact.email }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+    <!-- Display Users Only if Search is Active -->
+    <div *ngIf="filteredUsers.length > 0" class="container">
+        <div class="card-data" *ngFor="let user of filteredUsers">
+            <mat-card class="user-card" (click)="navigateToUser(user.id)">
+                <mat-card-header>
+                    <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
+                    <mat-card-subtitle>{{ user.team }}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="user.photo || 'assets/default-user.png'" alt="User Image" class="user-photo" />
+                <mat-card-content>
+                    <p>{{ user.contact?.email }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
+
+</body>
 </html>
