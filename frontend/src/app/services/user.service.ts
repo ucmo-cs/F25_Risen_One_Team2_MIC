@@ -21,6 +21,7 @@ export class UserApiService {
   public getUserInfo(uuid: string | null) {
     let user: User = {
         id: '',
+        username: '',
         firstname: '',
         lastname: '',
         photo: '',
@@ -28,10 +29,16 @@ export class UserApiService {
         birthday: '',
         contact: {
             email: '',
-            phone: ''
+            phone: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+            country: ''
         },
         projects: [],
-        team: ''
+        team: '',
+        about: ''
     };
     return this.users.find(person => person.id === uuid) || user;
   }
