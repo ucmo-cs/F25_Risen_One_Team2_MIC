@@ -1,21 +1,106 @@
-.card-data {
-  background-color: white;
-  padding-top: 20px;
-  width: 50%;
-  margin-left: 25%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-mat-card-header {
-  background-image: url('../../assets/mountain-bg.jpeg');
+html,
+body {
+  font-family: -apple-system, sans-serif;
+
+  background: #eaeaea;
 }
 
-.footer-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
+body {
+  perspective: 800px;
 }
 
-mat-form-field {
-  padding-right: 10px;
+.paper {
+  display: grid;
+
+  width: 3.96cm;
+
+  grid-template-columns: 3.96cm;
+  grid-template-rows: 8.4cm;
+
+  margin: 2rem auto;
+
+  transform-style: preserve-3d;
+  transition: transform linear 1s;
+}
+
+.paper.flip {
+  transform: rotateY(180deg);
+}
+
+.paper .page {
+  display: inline-block;
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+
+  box-shadow: 0 4px 8px #0001;
+}
+
+.paper .page .side {
+  width: inherit;
+  height: inherit;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: white;
+  backface-visibility: hidden;
+}
+
+.paper .page .side.back {
+  transform: rotateY(180deg);
+}
+
+.page {
+  transition: transform linear 1s;
+}
+
+.left.open {
+  transform: rotateY(-180deg);
+}
+
+.right.open {
+  transform: rotateY(180deg);
+}
+
+.paper .page .side {
+  padding: 1rem;
+  box-shadow: inset 1px 0 #f2f2f2, inset -1px 0 #f2f2f2;
+}
+
+.left {
+  transform: translateZ(2px);
+  transform-origin: center left;
+}
+
+.right {
+  transform: translateZ(1px);
+  transform-origin: center right;
+}
+
+button {
+  appearance: none;
+
+  font: inherit;
+
+  padding: .5rem .75rem;
+  margin: 2rem;
+
+  border-radius: .25rem;
+
+  background: #444;
+  color: white;
 }

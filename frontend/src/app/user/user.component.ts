@@ -35,7 +35,34 @@ export class UserComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, private userService: UserApiService) { }
 
+    setupClickEvents() {
+        const paper = document.querySelector('.paper');
+        const flipButton = document.querySelector('button');
+
+        flipButton?.addEventListener('click', () => {
+            paper?.classList.toggle('flip');
+        });
+
+        const leftSide = paper?.querySelector('.page.left');
+        leftSide?.addEventListener('click', () => {
+            leftSide?.classList.toggle('open');
+        });
+
+        const rightSide = paper?.querySelector('.page.right');
+        rightSide?.addEventListener('click', () => {
+            rightSide?.classList.toggle('open');
+        });
+
+        const centerSide = paper?.querySelector('.page.center');
+        centerSide?.addEventListener('click', () => {
+            centerSide?.classList.toggle('open');
+        });
+    }
+
     ngOnInit(): void {
+        // Setup click events for flipping the card
+        this.setupClickEvents();
+
         // Initialize component
         this.route.paramMap.subscribe(params => {
             this.userId = params.get('id');
