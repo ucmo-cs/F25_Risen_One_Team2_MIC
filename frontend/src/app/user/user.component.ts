@@ -4,9 +4,9 @@ import { User } from './user.model';
 import { UserApiService } from '../services/user.service';
 
 @Component({
-  selector: 'user-profile',
-  styleUrl: './user.component.css',
-  templateUrl: './user.component.html'
+    selector: 'user-profile',
+    styleUrl: './user.component.css',
+    templateUrl: './user.component.html'
 })
 
 export class UserComponent implements OnInit {
@@ -41,6 +41,14 @@ export class UserComponent implements OnInit {
             this.userId = params.get('id');
         });
 
-        this.user = this.userService.getUserInfo(this.userId) || this.user;
+        // check if user is already in session storage
+        const storedData = sessionStorage.getItem(`user-${this.userId}`);
+
+        if (!storedData) {
+            this.user = this.userService.getUserInfo(this.userId) || this.user;
+            sessionStorage.setItem(`user-${this.userId}`, JSON.stringify(this.user));
+        } else {
+            this.user = JSON.parse(storedData);
+        }
     }
 }
