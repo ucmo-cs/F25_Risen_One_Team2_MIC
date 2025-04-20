@@ -1,14 +1,56 @@
-<div class="profile-container">
-  <div class="profile-header">
-    <img [src]="user.photo" alt="Profile Picture" class="profile-img" />
-    <div class="profile-details">
-      <h3>{{ user.firstname }}, {{ user.lastname }}</h3>
-      <p>Email: {{ user.contact.email }}</p><br />
-      <p>Phone: {{ user.contact.phone }}</p><br />
-      <p>Location: {{ user.location }}</p><br />
-      <p>Team: {{ user.team }}</p><br />
-      <p>Projects: {{ user.projects }}</p><br />
-      <p>Birthday: {{ user.birthday }}</p><br />
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <div class="card-data">
+        <form>
+          <mat-card class="profile-info-card" style="align-items: center;">
+            <mat-card-header style="width: 100%; justify-content: center;">
+              <img mat-card-avatar [src]="user.photo" alt="User Image" class="user-photo" />
+              <mat-card-title>{{ user.firstname }} {{ user.lastname }}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput [readonly]="true" [value]=user.username />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput [readonly]="true" [value]=user.firstname />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput [readonly]="true" [value]=user.lastname />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [readonly]="true" [value]=user.birthday />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Location</mat-label>
+                <input matInput [readonly]="true" [value]=user.location />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput [readonly]="true" [value]=user.contact.email />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input matInput [readonly]="true" [value]=user.contact.phone />
+              </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-footer style="justify-content: center;">
+              <div class="footer" style="display: table; align-items: center; justify-content: center;">
+                <div class="footer-chips" *ngFor="let project of user.projects" style="display: table-cell;">
+                  <mat-chip>{{ project }}</mat-chip>
+                </div>
+              </div>
+            </mat-card-footer>
+          </mat-card>
+        </form>
+      </div>
     </div>
   </div>
 </div>
